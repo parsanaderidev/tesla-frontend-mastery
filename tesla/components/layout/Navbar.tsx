@@ -75,7 +75,7 @@ function Navbar() {
 
 			{activeMenu && (
 				<div
-					className="absolute top-full left-0 w-full bg-white shadow-lg p-10"
+					className="absolute top-10 left-0 w-full h-full bg-white-200 z-10 p-10"
 					onMouseEnter={() => setActiveMenu(activeMenu)}
 					onMouseLeave={() => setActiveMenu(null)}
 				>
