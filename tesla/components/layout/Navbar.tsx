@@ -75,15 +75,20 @@ function Navbar() {
 					})}
 				</div>
 
-				{activeMenu && (
-					<div
-						className="absolute top-10 left-0 w-full h-full bg-white-200 z-10 p-10"
-						onMouseEnter={() => setActiveMenu(activeMenu)}
-						onMouseLeave={() => setActiveMenu(null)}
-					>
-						<MegaMenu type={activeMenu} />
-					</div>
-				)}
+				<div
+					className={`absolute top-16 left-0 w-full bg-red-500 z-50 p-10 transition-all duration-300
+						ease-in-out
+						${activeMenu
+							? "opacity-100 translate-y-0 pointer-events-auto"
+							: "opacity-0 -translate-y-4 pointer-events-none"
+						}
+					`}
+					onMouseEnter={() => setActiveMenu(activeMenu)}
+					onMouseLeave={() => setActiveMenu(null)}
+				>
+					{activeMenu && <MegaMenu type={activeMenu} />}
+				</div>
+
 			</nav>
 
 			<div className="bottom-navbar fixed bottom-0 p-3 flex gap-2 bg-white w-full align-center justify-center">
