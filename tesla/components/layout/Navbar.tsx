@@ -10,6 +10,7 @@ import {
 	MessageSquareMore,
 } from "lucide-react";
 import { PiSteeringWheelFill } from "react-icons/pi";
+import { RiMessage2Fill } from "react-icons/ri";
 import MegaMenuFactory from "./MegaMenu/MegaMenuFactory";
 
 	export const navLinks = [
@@ -115,7 +116,7 @@ import MegaMenuFactory from "./MegaMenu/MegaMenuFactory";
 				{/* Bottom Navbar */}
 				<div className="fixed bottom-0 p-3 flex gap-2 bg-white w-full justify-center">
 					<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm cursor-pointer">
-						<MessageSquareMore size={20} />
+						<RiMessage2Fill size={20} className="rounded-lg" />
 						Ask a Question
 					</button>
 
