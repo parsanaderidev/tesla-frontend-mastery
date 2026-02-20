@@ -32,10 +32,21 @@ const iconMap = {
 	user: CircleUser,
 };
 
-const LANGUAGE_KEY = "language";
+const menuHeights: Record<string, number> = {
+	vehicles: 600,
+	energy: 320,
+	charging: 500,
+	discover: 400,
+	shop: 300,
+	language: 600,
+	help: 180,
+	account: 180,
+};
 
 function Navbar() {
-	const [activeMenu, setActiveMenu] = useState<string | null>(null);
+	const [visibleMenu, setVisibleMenu] = useState<string | null>(null);
+	const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+
 	const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
 	const handleMouseEnter = () => {
@@ -44,8 +55,32 @@ function Navbar() {
 
 	const handleMouseLeave = () => {
 		timeoutRef.current = setTimeout(() => {
-			setActiveMenu(null);
-		}, 120);
+			closeMenu();
+		}, 150);
+	};
+
+	const openMenu = (key: string) => {
+		if (!visibleMenu) {
+			setVisibleMenu(key);
+			return;
+		}
+
+		if (key !== visibleMenu) {
+			setIsAnimatingOut(true);
+
+			setTimeout(() => {
+				setVisibleMenu(key);
+				setIsAnimatingOut(false);
+			}, 250);
+		}
+	};
+
+	const closeMenu = () => {
+		setIsAnimatingOut(true);
+		setTimeout(() => {
+			setVisibleMenu(null);
+			setIsAnimatingOut(false);
+		}, 250);
 	};
 
 	return (
@@ -56,57 +91,44 @@ function Navbar() {
 				onMouseLeave={handleMouseLeave}
 			>
 				{/* Logo */}
-				<div>
-					<Link href="/" className="inline-block">
-						<Image
-							src="/tesla-contents/images/Tesla.jpg"
-							alt="Tesla"
-							width={115}
-							height={115}
-							priority
-						/>
-					</Link>
-				</div>
+				<Link href="/">
+					<Image
+						src="/tesla-contents/images/Tesla.jpg"
+						alt="Tesla"
+						width={115}
+						height={115}
+						priority
+					/>
+				</Link>
 
-				{/* Center Nav Links */}
-				<ul className="flex relative">
+				{/* Center Links */}
+				<ul className="flex">
 					{navLinks.map((item) => (
 						<li
 							key={item.key}
-							onMouseEnter={() => {
-								if (activeMenu !== LANGUAGE_KEY) {
-									setActiveMenu(item.key);
-								}
-							}}
-							className="relative text-[15px] font-semibold cursor-pointer py-2 px-6 rounded-sm
-							transition-colors duration-200 hover:bg-gray-100"
+							onMouseEnter={() => openMenu(item.key)}
+							className="text-[15px] font-semibold cursor-pointer py-2 px-6 rounded-sm hover:bg-gray-100"
 						>
 							{item.label}
 						</li>
 					))}
 				</ul>
 
-				{/* Right Icons */}
-				<div className="flex">
+				{/* Icons */}
+				<div className="flex gap-2">
 					{navIcons.map((item) => {
 						const IconComponent =
 							iconMap[item.icon as keyof typeof iconMap];
 
-						const isLanguage = item.key === LANGUAGE_KEY;
-
 						return (
 							<button
 								key={item.label}
-								onClick={() => {
-									if (isLanguage) {
-										setActiveMenu(
-											activeMenu === LANGUAGE_KEY
-												? null
-												: LANGUAGE_KEY
-										);
-									}
-								}}
-								className="p-1.5 rounded-sm hover:bg-gray-100 cursor-pointer"
+								onClick={() =>
+									visibleMenu === item.key
+										? closeMenu()
+										: openMenu(item.key)
+								}
+								className="p-1.5 rounded-sm hover:bg-gray-100"
 							>
 								<IconComponent size={23} />
 							</button>
@@ -116,26 +138,35 @@ function Navbar() {
 
 				{/* Mega Menu */}
 				<div
-					className={`absolute top-full left-0 w-full bg-white z-50 p-10
-						transition-all duration-300
-						ease-[cubic-bezier(0.22,1,0.36,1)]
-						${activeMenu
-							? "opacity-100 translate-y-0 pointer-events-auto"
-							: "opacity-0 -translate-y-3 pointer-events-none"
-						}`}
+					className="absolute top-full left-0 w-full overflow-hidden transition-[height] duration-500 ease-in-out"
+					style={{
+						height: visibleMenu
+							? menuHeights[visibleMenu]
+							: 0,
+					}}
 				>
-					{activeMenu && <MegaMenuFactory type={activeMenu} />}
+					{visibleMenu && (
+						<div
+							className={`bg-white transform-gpu transition-all duration-300 ease-in-out
+							${isAnimatingOut
+									? "opacity-0 -translate-y-4"
+									: "opacity-100 translate-y-0"
+								}`}
+						>
+							<MegaMenuFactory type={visibleMenu} />
+						</div>
+					)}
 				</div>
 			</nav>
 
-			{/* Bottom Navbar */}
+			{/* Bottom Bar */}
 			<div className="fixed bottom-0 p-3 flex gap-2 bg-white w-full justify-center">
-				<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm cursor-pointer">
+				<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm">
 					<RiMessage2Fill size={20} />
 					Ask a Question
 				</button>
 
-				<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm cursor-pointer">
+				<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm">
 					<PiSteeringWheelFill size={25} className="text-blue-500" />
 					Schedule a Drive Today
 				</button>
