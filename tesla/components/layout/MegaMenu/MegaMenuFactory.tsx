@@ -1,6 +1,7 @@
 import ChargingMega from "./charging/ChargingMega";
 import DiscoverMega from "./discover/DiscoverMega";
 import EnergyMega from "./energy/EnergyMega";
+import LanguageMega from "./language/LanguageMega";
 import ShopMega from "./shop/ShopMega";
 import VehiclesMega from "./vehicles/VehiclesMega";
 
@@ -21,6 +22,8 @@ export default function MegaMenuFactory({ type }: MegaMenuProps) {
             return <DiscoverMega />;
         case "shop":
             return <ShopMega />;
+        case "language":
+            return <LanguageMega />;
         default:
             return null;
     }
