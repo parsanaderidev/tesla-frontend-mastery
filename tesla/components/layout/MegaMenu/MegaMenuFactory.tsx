@@ -26,5 +26,5 @@ export default function MegaMenuFactory({ type }: MegaMenuProps) {
             return <LanguageMega />;
         default:
             return null;
-    }
-}
+    };
+};

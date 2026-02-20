@@ -3,11 +3,11 @@
 interface Country {
     name: string;
     lang: string | string[];
-}
+};
 
 interface RenderCountryProps {
     country: Country;
-}
+};
 
 export const languageData = {
     America: {
@@ -115,7 +115,7 @@ function RenderCountry({ country }: RenderCountryProps) {
             </div>
         </div>
     );
-}
+};
 
 // Mega menu
 function LanguageMega() {
@@ -189,6 +189,6 @@ function LanguageMega() {
             </div>
         </section>
     );
-}
+};
 
 export default LanguageMega;

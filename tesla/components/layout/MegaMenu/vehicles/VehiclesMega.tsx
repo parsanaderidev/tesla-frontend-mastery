@@ -56,7 +56,7 @@ export const vehiclesContent = {
         'Semi',
         'Roadster',
         'Robotaxi'
-    ]
+    ],
 };
 
 function VehiclesMega() {

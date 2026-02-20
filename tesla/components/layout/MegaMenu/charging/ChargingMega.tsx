@@ -40,7 +40,7 @@ export const chargingContent = {
         'Charging with NACS',
         'Supercharger Voting',
         'Host a Supercharger',
-    ]
+    ],
 };
 
 function ChargingMega() {
@@ -78,7 +78,6 @@ function ChargingMega() {
                     ))}
                 </div>
             </section>
-
         </>
     );
 };

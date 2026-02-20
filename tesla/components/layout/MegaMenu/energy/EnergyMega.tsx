@@ -36,7 +36,7 @@ export const energyContent = {
         'Partner with Tesla',
         'Commercial',
         'Utilities',
-    ]
+    ],
 };
 
 function EnergyMega() {
