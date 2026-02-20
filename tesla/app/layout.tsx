@@ -16,7 +16,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Tesla Experience Clone",
-  description: "A pixel-perfect Tesla website recreation",
+  description: "A pixel-perfect Tesla website recreation by ParsaNaderi",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -33,4 +38,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-};
+}
