@@ -1,4 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
+import SwiperHero from "@/components/sections/hero/HeroSwiper";
 
 export default function Home() {
 	return (
@@ -9,7 +10,9 @@ export default function Home() {
 				</div>
 			</header>
 
-			<main className="main"></main>
+			<main className="main">
+				<SwiperHero />
+			</main>
 
 			<footer className="footer"></footer>
 		</>
