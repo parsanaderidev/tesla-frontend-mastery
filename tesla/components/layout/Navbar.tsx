@@ -86,7 +86,7 @@ function Navbar() {
 	return (
 		<>
 			<nav
-				className="relative flex items-center justify-between px-10 h-16"
+				className="relative flex z-50 items-center justify-between px-10 h-16"
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 			>

@@ -20,25 +20,38 @@ h6 {
     font-family: var(--font-heading), sans-serif;
 }
 
-.hero-swiper .swiper-button-next,
-.hero-swiper .swiper-button-prev {
-    color: rgb(255, 0, 0); 
-    width: 18px;
-    height: 18px; 
-    background: transparent;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: aliceblue;
+/* Custom arrows wrapper */
+.hero-swiper .custom-next,
+.hero-swiper .custom-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;  
+  height: 50px; 
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background-color: aliceblue;
+  cursor: pointer;
+  padding: 10px 20px;
 }
 
-.hero-swiper .swiper-button-next:hover,
-.hero-swiper .swiper-button-prev:hover {
-    color: #ff0000;
-    filter: brightness(1.3);
+/* Position arrows */
+.hero-swiper .custom-next { right: 2rem; }
+.hero-swiper .custom-prev { left: 2rem; }
+
+/* Hover effect */
+.hero-swiper .custom-next:hover,
+.hero-swiper .custom-prev:hover {
+  filter: brightness(1.3);
 }
 
-.hero-swiper .swiper-button-next::after,
-.hero-swiper .swiper-button-prev::after {
-    font-size: 28px;
-    font-weight: 700;
+/* Icon style */
+.hero-swiper .custom-next::after,
+.hero-swiper .custom-prev::after {
+  font-size: 28px; 
+  font-weight: 700; 
+  color: rgb(40, 40, 40); 
 }

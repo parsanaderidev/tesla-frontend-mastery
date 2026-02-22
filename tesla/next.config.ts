@@ -1,11 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  transpilePackages: [],
-  experimental: {
-    appDir: true,     
-    typedRoutes: true    
-  },
-}
+const nextConfig = {};
 
-module.exports = nextConfig
+module.exports = nextConfig;
