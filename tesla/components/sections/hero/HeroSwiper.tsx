@@ -42,14 +42,14 @@ const heroSlides: {
 
 export default function HeroSwiper() {
     return (
-        <section className="relative w-full h-[80vh]">
+        <section className="hero-swiper relative w-full h-[80vh]">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 navigation
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 4000 }}
                 loop
-                className="absolute top-0 left-0 w-full h-full object-cover"
+                className="w-full h-full"
             >
                 {heroSlides.map((slide) => (
                     <SwiperSlide key={slide.id}>
