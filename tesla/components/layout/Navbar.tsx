@@ -95,8 +95,8 @@ function Navbar() {
 					<Image
 						src="/tesla-contents/images/Tesla.jpg"
 						alt="Tesla"
-						width={115}
-						height={115}
+						width={105}
+						height={105}
 						priority
 					/>
 				</Link>

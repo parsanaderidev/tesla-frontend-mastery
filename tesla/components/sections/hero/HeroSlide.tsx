@@ -1,42 +1,49 @@
 "use client";
 
+import Image from "next/image";
+
 interface HeroSlideProps {
     title: string;
     subtitle: string;
-    img: string;    
-    isVideo?: boolean;   
-    subtitleStyle?: "underline" | "inline" | "normal";
+    img: string;
+    isVideo?: boolean;
+    subtitleStyle?: "inline" | "underline" | "normal";
 }
 
-export default function HeroSlide({ title, subtitle, img, isVideo = false, subtitleStyle = "normal" }: HeroSlideProps) {
+export default function HeroSlide({
+    title,
+    subtitle,
+    img,
+    isVideo,
+    subtitleStyle = "normal",
+}: HeroSlideProps) {
     return (
-        <div className="w-full h-full flex flex-col justify-center items-start px-10 relative">
-
-            {/* Render video if isVideo is true, otherwise render image */}
+        <div className="relative w-full h-full">
             {isVideo ? (
                 <video
                     src={img}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="w-full h-full object-cover"
                     autoPlay
                     muted
                     loop
-                    playsInline
                 />
             ) : (
-                <div
-                    className="absolute top-0 left-0 w-full h-full bg-center bg-cover"
-                    style={{ backgroundImage: `url(${img})` }}
+                <Image
+                    src={img}
+                    alt={title}
+                    className="w-full h-full object-cover"
+                    width={1920}
+                    height={1080}
                 />
             )}
 
-            {/* Overlay for text */}
-            <div className="relative z-10 text-white">
-                <h1 className="text-5xl font-bold mb-2">{title}</h1>
+            <div className="absolute bottom-10 left-10 text-white">
+                <h2 className="text-3xl font-bold">{title}</h2>
                 <p
-                    className={`text-xl ${subtitleStyle === "underline"
-                            ? "border-b border-white inline-block"
-                            : subtitleStyle === "inline"
-                                ? "inline-block"
+                    className={`text-lg mt-2 ${subtitleStyle === "inline"
+                            ? "inline"
+                            : subtitleStyle === "underline"
+                                ? "underline"
                                 : ""
                         }`}
                 >
