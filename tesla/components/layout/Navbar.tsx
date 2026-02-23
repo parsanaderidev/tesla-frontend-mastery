@@ -161,12 +161,12 @@ function Navbar() {
 
 			{/* Bottom Bar */}
 			<div className="fixed bottom-0 p-3 flex gap-2 bg-white w-full justify-center">
-				<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm">
+				<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm cursor-pointer">
 					<RiMessage2Fill size={20} />
 					Ask a Question
 				</button>
 
-				<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm">
+				<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm cursor-pointer">
 					<PiSteeringWheelFill size={25} className="text-blue-500" />
 					Schedule a Drive Today
 				</button>
