@@ -38,7 +38,7 @@ const heroSlides: {
             title: "Model Y",
             subtitle: "0% APR Available",
             img: "/tesla-contents/images/Homepage-Promo-Meet-Model-Y.jpg",
-            subtitleStyle: "normal",
+            subtitleStyle: "underline",
         },
     ];
 

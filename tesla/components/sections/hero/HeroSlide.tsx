@@ -18,11 +18,12 @@ export default function HeroSlide({
     subtitleStyle = "normal",
 }: HeroSlideProps) {
     return (
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-screen">
+
             {isVideo ? (
                 <video
                     src={img}
-                    className="w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
                     autoPlay
                     muted
                     loop
@@ -31,21 +32,21 @@ export default function HeroSlide({
                 <Image
                     src={img}
                     alt={title}
-                    className="w-full h-full object-cover"
-                    width={1920}
-                    height={1080}
+                    fill
+                    className="object-cover"
                 />
             )}
 
-            <div className="absolute bottom-10 left-10 text-white">
-                <h2 className="text-3xl font-bold">{title}</h2>
+            <div className="absolute top-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-center text-white">
+                <h2 className="text-5xl font-bold">{title}</h2>
                 <p
-                    className={`text-lg mt-2 ${subtitleStyle === "inline"
+                    className={`text-xl mt-2 ${
+                        subtitleStyle === "inline"
                             ? "inline"
                             : subtitleStyle === "underline"
-                                ? "underline"
-                                : ""
-                        }`}
+                            ? "underline"
+                            : ""
+                    }`}
                 >
                     {subtitle}
                 </p>
