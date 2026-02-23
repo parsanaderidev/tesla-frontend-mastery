@@ -2,9 +2,10 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import HeroSlide from "./HeroSlide";
 
 import { ChevronRight, ChevronLeft } from 'lucide-react';
@@ -55,13 +56,16 @@ export default function HeroSwiper() {
     return (
         <section className="hero-swiper relative w-full h-[80vh]">
             <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
+                modules={[Navigation, Pagination, Autoplay, EffectFade]}
+                effect="fade"
+                fadeEffect={{ crossFade: true }}
                 navigation={{
                     nextEl: ".custom-next",
                     prevEl: ".custom-prev",
                 }}
                 pagination={{ clickable: true }}
-                autoplay={{ delay: 4000 }}
+                autoplay={{ delay: 5000 }}
+                speed={1000}
                 loop
                 className="hero-swiper w-full h-full"
             >
