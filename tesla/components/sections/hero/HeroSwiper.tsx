@@ -17,6 +17,8 @@ const heroSlides: {
     img: string;
     isVideo?: boolean;
     subtitleStyle?: "inline" | "underline" | "normal";
+    primaryBtnText: string;
+    secondaryBtnText: string;
 }[] = [
         {
             id: 1,
@@ -25,6 +27,8 @@ const heroSlides: {
             img: "/tesla-contents/videos/Homepage-Promo-Carousel-FSD-Supervised-Tablet.webm",
             isVideo: true,
             subtitleStyle: "inline",
+            primaryBtnText: "Demo FSD (Supervised)",
+            secondaryBtnText: "Learn More",
         },
         {
             id: 2,
@@ -32,6 +36,8 @@ const heroSlides: {
             subtitle: "0.99% APR Available",
             img: "/tesla-contents/images/Homepage-Promo-Model-3.jpg",
             subtitleStyle: "underline",
+            primaryBtnText: "Order Now",
+            secondaryBtnText: "View Inventory",
         },
         {
             id: 3,
@@ -39,6 +45,8 @@ const heroSlides: {
             subtitle: "0% APR Available",
             img: "/tesla-contents/images/Homepage-Promo-Meet-Model-Y.jpg",
             subtitleStyle: "underline",
+            primaryBtnText: "Order Now",
+            secondaryBtnText: "View Inventory",
         },
     ];
 
