@@ -47,12 +47,12 @@ function ChargingMega() {
     return (
         <>
             {/* Vehicles */}
-            <section className="py-5 px-25 grid grid-cols-[3fr_1px_1fr] gap-x-5">
+            <section className="py-10 px-25 grid grid-cols-[3fr_1px_1fr] gap-x-5">
                 {/* Cars */}
                 <div className="grid pr-6 gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-min cursor-pointer">
                     {chargingData.map((item) => (
                         <div key={item.title} className="flex flex-col items-center text-center">
-                            <Image src={item.image} alt={item.title} width={250} height={250} />
+                            <Image src={item.image} alt={item.title} width={200} height={200} />
                             <h3 className="font-semibold mt-2">{item.title}</h3>
                             <div className='flex gap-5 mt-2'>
                                 <h4 className='underline'>{item.Learn}</h4>

@@ -37,7 +37,7 @@ const menuHeights: Record<string, number> = {
 	energy: 320,
 	charging: 500,
 	discover: 400,
-	shop: 300,
+	shop: 350,
 	language: 600,
 	help: 180,
 	account: 180,

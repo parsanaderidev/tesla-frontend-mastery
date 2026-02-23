@@ -23,7 +23,7 @@ function ShopMega() {
     return (
         <>
             {/* Vehicles */}
-            <section className="py-5 px-25 flex mx-auto justify-center">
+            <section className="py-15 px-25 flex mx-auto justify-center">
                 {/* Cars */}
                 <div className="grid pr-6 gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-min cursor-pointer">
                     {chargingData.map((item) => (

@@ -63,7 +63,7 @@ function VehiclesMega() {
     return (
         <>
             {/* Vehicles */}
-            <section className="py-5 px-25 grid grid-cols-[3fr_1px_1fr] gap-x-5">
+            <section className="py-10 px-25 grid grid-cols-[3fr_1px_1fr] gap-x-5">
                 {/* Cars */}
                 <div className="grid pr-6 gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-min cursor-pointer">
                     {vehiclesData.map((item) => (
