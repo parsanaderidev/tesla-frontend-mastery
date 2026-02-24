@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -76,7 +76,34 @@ const slides: SlideType[] = [
 export default function CardSwiper() {
     const prevRef = useRef<HTMLDivElement | null>(null);
     const nextRef = useRef<HTMLDivElement | null>(null);
+    const swiperRef = useRef<SwiperType | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    useEffect(() => {
+        const swiper = swiperRef.current;
+        if (!swiper) return;
+
+        if (prevRef.current && nextRef.current) {
+            // @ts-expect-error: Swiper's navigation params are not typed but can be mutated
+            swiper.params.navigation.prevEl = prevRef.current;
+            // @ts-expect-error: Swiper's navigation params are not typed but can be mutated
+            swiper.params.navigation.nextEl = nextRef.current;
+
+            swiper.navigation.destroy();
+            swiper.navigation.init();
+            swiper.navigation.update();
+        }
+
+        const handleSlideChange = () => {
+            setActiveIndex(swiper.activeIndex);
+        };
+
+        swiper.on("slideChange", handleSlideChange);
+
+        return () => {
+            swiper.off("slideChange", handleSlideChange);
+        };
+    }, []);
 
     return (
         <section className="relative w-full">
@@ -88,22 +115,17 @@ export default function CardSwiper() {
                     slidesPerView={1.5}
                     speed={600}
                     loop={false}
-                    onBeforeInit={(swiper: SwiperType) => {
-                        if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
-                            swiper.params.navigation.prevEl = prevRef.current;
-                            swiper.params.navigation.nextEl = nextRef.current;
-                        }
+                    onBeforeInit={(swiper) => {
+                        swiperRef.current = swiper;
                     }}
-                    onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                 >
-                    {slides.map((slide) => (
-                        <SwiperSlide key={slide.id} className="pl-8 pr-0!">
-                            <CardSlide {...slide} />
-                        </SwiperSlide>
-                    ))}
+                    {slides.map((slide) =>
+                    (<SwiperSlide key={slide.id} className="pl-3 pr-3">
+                        <CardSlide {...slide} />
+                    </SwiperSlide>))}
                 </Swiper>
 
-                {/* Navigation Buttons */}
+                {/* Prev Button */}
                 <div
                     ref={prevRef}
                     className={`absolute left-5 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition ${activeIndex === 0 ? "opacity-0 pointer-events-none" : ""
@@ -112,6 +134,7 @@ export default function CardSwiper() {
                     <ChevronLeft size={26} />
                 </div>
 
+                {/* Next Button */}
                 <div
                     ref={nextRef}
                     className={`absolute right-5 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition ${activeIndex === slides.length - 1 ? "opacity-0 pointer-events-none" : ""
@@ -123,4 +146,4 @@ export default function CardSwiper() {
             </div>
         </section>
     );
-};
+}
