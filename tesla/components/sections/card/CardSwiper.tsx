@@ -34,25 +34,34 @@ const slides: SlideType[] = [
         id: 2,
         title: "Model 3",
         subtitle: "0.99% APR Available",
-        img: "/tesla-contents/images/Homepage-Promo-Model-3.jpg",
+        img: "/tesla-contents/images/Homepage-Card-Model-3-PS.webp",
         primaryBtnText: "Order Now",
         secondaryBtnText: "View Inventory",
         hasTextOverlay: true,
     },
     {
         id: 3,
-        title: "Model X",
+        title: "Model Y",
         subtitle: "Long Range",
-        img: "/tesla-contents/images/Homepage-Promo-Model-X.jpg",
+        img: "/tesla-contents/images/Homepage-Vehicle-Card-Model-Y.jpg",
         primaryBtnText: "Order Now",
         secondaryBtnText: "Learn More",
         hasTextOverlay: true,
     },
     {
         id: 4,
-        title: "Model Y",
+        title: "Model X",
         subtitle: "0% APR Available",
-        img: "/tesla-contents/images/Homepage-Promo-Model-Y.jpg",
+        img: "/tesla-contents/images/Homepage-Card-Model-X.jpg",
+        primaryBtnText: "Order Now",
+        secondaryBtnText: "View Inventory",
+        hasTextOverlay: true,
+    },
+    {
+        id: 5,
+        title: "Model S",
+        subtitle: "0% APR Available",
+        img: "/tesla-contents/images/Homepage-Card-Model-S-v3.avif",
         primaryBtnText: "Order Now",
         secondaryBtnText: "View Inventory",
         hasTextOverlay: true,
@@ -69,7 +78,7 @@ export default function CardSwiper() {
 
                 <Swiper
                     modules={[Navigation]}
-                    spaceBetween={25}      
+                    spaceBetween={10}      
                     slidesPerView={1.5}   
                     speed={600}
                     onBeforeInit={(swiper: SwiperType) => {
