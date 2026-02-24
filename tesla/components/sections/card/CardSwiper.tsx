@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -38,7 +38,7 @@ const slides: SlideType[] = [
         subtopic: "Sport Sedan",
         img: "/tesla-contents/images/Homepage-Card-Model-3-PS.webp",
         primaryBtnText: "Order Now",
-        secondaryBtnText: "View Inventory",
+        secondaryBtnText: "Learn More",
         hasTextOverlay: true,
     },
     {
@@ -58,7 +58,7 @@ const slides: SlideType[] = [
         subtitle: "3.99% APR Available",
         img: "/tesla-contents/images/Homepage-Card-Model-X.jpg",
         primaryBtnText: "Order Now",
-        secondaryBtnText: "View Inventory",
+        secondaryBtnText: "Learn More",
         hasTextOverlay: true,
     },
     {
@@ -68,7 +68,7 @@ const slides: SlideType[] = [
         subtitle: "3.99% APR Available",
         img: "/tesla-contents/images/Homepage-Card-Model-S-v3.avif",
         primaryBtnText: "Order Now",
-        secondaryBtnText: "View Inventory",
+        secondaryBtnText: "Learn More",
         hasTextOverlay: true,
     },
 ];
@@ -76,6 +76,7 @@ const slides: SlideType[] = [
 export default function CardSwiper() {
     const prevRef = useRef<HTMLDivElement | null>(null);
     const nextRef = useRef<HTMLDivElement | null>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     return (
         <section className="relative w-full">
@@ -83,15 +84,17 @@ export default function CardSwiper() {
 
                 <Swiper
                     modules={[Navigation]}
-                    spaceBetween={5}      
-                    slidesPerView={1.5}   
+                    spaceBetween={0}
+                    slidesPerView={1.5}
                     speed={600}
+                    loop={false}
                     onBeforeInit={(swiper: SwiperType) => {
                         if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
                             swiper.params.navigation.prevEl = prevRef.current;
                             swiper.params.navigation.nextEl = nextRef.current;
                         }
                     }}
+                    onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                 >
                     {slides.map((slide) => (
                         <SwiperSlide key={slide.id} className="pl-8 pr-0!">
@@ -103,14 +106,16 @@ export default function CardSwiper() {
                 {/* Navigation Buttons */}
                 <div
                     ref={prevRef}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition"
+                    className={`absolute left-5 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition ${activeIndex === 0 ? "opacity-0 pointer-events-none" : ""
+                        }`}
                 >
                     <ChevronLeft size={26} />
                 </div>
 
                 <div
                     ref={nextRef}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition"
+                    className={`absolute right-5 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition ${activeIndex === slides.length - 1 ? "opacity-0 pointer-events-none" : ""
+                        }`}
                 >
                     <ChevronRight size={26} />
                 </div>
