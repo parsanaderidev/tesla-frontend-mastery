@@ -30,7 +30,7 @@ export default function CardSlide({
                 alt={title || "slide"}
                 fill
                 priority
-                quality={100}
+                quality={75}
                 className="object-cover"
             />
 
