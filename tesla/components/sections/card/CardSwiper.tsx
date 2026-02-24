@@ -13,6 +13,7 @@ type SlideType = {
     id: number;
     title?: string;
     topicImg?: string;
+    subtopic?: string;
     subtitle?: string;
     img: string;
     primaryBtnText: string;
@@ -25,6 +26,7 @@ const slides: SlideType[] = [
         id: 1,
         img: "/tesla-contents/images/Homepage-Card-Cybertruck.jpg",
         topicImg: "/tesla-contents/images/Cybertruck-logo.png",
+        subtopic: "Utility Truck",
         subtitle: "Starting at $59,990",
         primaryBtnText: "Order Now",
         secondaryBtnText: "Learn More",
@@ -33,6 +35,7 @@ const slides: SlideType[] = [
     {
         id: 2,
         title: "Model 3",
+        subtopic: "Sport Sedan",
         img: "/tesla-contents/images/Homepage-Card-Model-3-PS.webp",
         primaryBtnText: "Order Now",
         secondaryBtnText: "View Inventory",
@@ -41,6 +44,7 @@ const slides: SlideType[] = [
     {
         id: 3,
         title: "Model Y",
+        subtopic: "Midsize SUV",
         subtitle: "Lease From $459/mo",
         img: "/tesla-contents/images/Homepage-Vehicle-Card-Model-Y.jpg",
         primaryBtnText: "Order Now",
@@ -50,6 +54,7 @@ const slides: SlideType[] = [
     {
         id: 4,
         title: "Model X",
+        subtopic: "Luxury SUV",
         subtitle: "3.99% APR Available",
         img: "/tesla-contents/images/Homepage-Card-Model-X.jpg",
         primaryBtnText: "Order Now",
@@ -59,6 +64,7 @@ const slides: SlideType[] = [
     {
         id: 5,
         title: "Model S",
+        subtopic: "Luxury Sedan",
         subtitle: "3.99% APR Available",
         img: "/tesla-contents/images/Homepage-Card-Model-S-v3.avif",
         primaryBtnText: "Order Now",

@@ -3,6 +3,7 @@ import Image from "next/image";
 type CardSlideProps = {
     title?: string;
     topicImg?: string;
+    subtopic?: string;
     subtitle?: string;
     img: string;
     primaryBtnText: string;
@@ -13,6 +14,7 @@ type CardSlideProps = {
 export default function CardSlide({
     title,
     topicImg,
+    subtopic,
     subtitle,
     img,
     primaryBtnText,
@@ -35,6 +37,10 @@ export default function CardSlide({
             {/* Overlay Content */}
             {hasTextOverlay && (
                 <div className="absolute inset-0 flex flex-col justify-end p-6 z-10 text-white">
+
+                    <div className="text-start absolute top-4 left-5">
+                        {subtopic && <p className="text-md font-bold">{subtopic}</p>}
+                    </div>
 
                     {/* Topic */}
                     <div className="mb-4">
