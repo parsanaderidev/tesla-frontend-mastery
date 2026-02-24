@@ -56,11 +56,11 @@ export default function HeroSlide({
 
                 {/* Buttons */}
                 <div className="flex gap-4 mt-6">
-                    <button className="px-18 py-2 bg-blue-500 text-white rounded-md font-medium hover:bg-gray-200 transition">
+                    <button className="px-18 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
                         {primaryBtnText}
                     </button>
 
-                    <button className="px-14 py-2 bg-white text-black rounded-md font-medium hover:bg-white hover:text-black transition">
+                    <button className="px-14 py-2 bg-white text-black rounded-md font-medium hover:bg-gray-100 transition cursor-pointer">
                         {secondaryBtnText}
                     </button>
                 </div>
