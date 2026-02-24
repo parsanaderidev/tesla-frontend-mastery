@@ -33,7 +33,6 @@ const slides: SlideType[] = [
     {
         id: 2,
         title: "Model 3",
-        subtitle: "0.99% APR Available",
         img: "/tesla-contents/images/Homepage-Card-Model-3-PS.webp",
         primaryBtnText: "Order Now",
         secondaryBtnText: "View Inventory",
@@ -42,7 +41,7 @@ const slides: SlideType[] = [
     {
         id: 3,
         title: "Model Y",
-        subtitle: "Long Range",
+        subtitle: "Lease From $459/mo",
         img: "/tesla-contents/images/Homepage-Vehicle-Card-Model-Y.jpg",
         primaryBtnText: "Order Now",
         secondaryBtnText: "Learn More",
@@ -51,7 +50,7 @@ const slides: SlideType[] = [
     {
         id: 4,
         title: "Model X",
-        subtitle: "0% APR Available",
+        subtitle: "3.99% APR Available",
         img: "/tesla-contents/images/Homepage-Card-Model-X.jpg",
         primaryBtnText: "Order Now",
         secondaryBtnText: "View Inventory",
@@ -60,7 +59,7 @@ const slides: SlideType[] = [
     {
         id: 5,
         title: "Model S",
-        subtitle: "0% APR Available",
+        subtitle: "3.99% APR Available",
         img: "/tesla-contents/images/Homepage-Card-Model-S-v3.avif",
         primaryBtnText: "Order Now",
         secondaryBtnText: "View Inventory",

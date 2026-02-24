@@ -45,10 +45,10 @@ export default function HeroSlide({
 
                 <p
                     className={`text-xl mt-2 ${subtitleStyle === "inline"
-                            ? "inline"
-                            : subtitleStyle === "underline"
-                                ? "underline"
-                                : ""
+                        ? "inline"
+                        : subtitleStyle === "underline"
+                            ? "underline"
+                            : ""
                         }`}
                 >
                     {subtitle}
@@ -56,11 +56,11 @@ export default function HeroSlide({
 
                 {/* Buttons */}
                 <div className="flex gap-4 mt-6">
-                    <button className="px-18 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
+                    <button className="w-55 h-10 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
                         {primaryBtnText}
                     </button>
 
-                    <button className="px-14 py-2 bg-white text-black rounded-md font-medium hover:bg-gray-100 transition cursor-pointer">
+                    <button className="w-55 h-10 bg-white text-black rounded-md font-medium hover:bg-gray-100 transition cursor-pointer">
                         {secondaryBtnText}
                     </button>
                 </div>

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 type CardSlideProps = {
-    title?: string;     
-    topicImg?: string; 
+    title?: string;
+    topicImg?: string;
     subtitle?: string;
-    img: string;         
+    img: string;
     primaryBtnText: string;
     secondaryBtnText: string;
     hasTextOverlay?: boolean;
@@ -34,24 +34,37 @@ export default function CardSlide({
 
             {/* Overlay Content */}
             {hasTextOverlay && (
-                <div className="absolute inset-0 flex flex-col justify-between p-6 z-10 text-white">
-                    <div>
+                <div className="absolute inset-0 flex flex-col justify-end p-6 z-10 text-white">
+
+                    {/* Topic */}
+                    <div className="mb-4">
                         {topicImg ? (
-                            <div className="h-16 w-auto relative">
-                                <Image src={topicImg} alt="topic" fill className="object-contain" />
+                            <div className="relative top-8 right-15">
+                                <Image
+                                    src={topicImg}
+                                    alt="topic"
+                                    width={350}
+                                    height={350}
+                                />
                             </div>
                         ) : (
-                            title && <h3 className="text-2xl font-semibold">{title}</h3>
+                            title && <h3 className="text-5xl font-semibold">{title}</h3>
                         )}
-                        {subtitle && <p className="mt-2 text-sm">{subtitle}</p>}
+                        {subtitle && (
+                            <div className="mt-0 flex flex-col relative w-max">
+                                <p className="text-lg">{subtitle}</p>
+                                <span className="block h-[0.5px] bg-white -mt-0.6"></span>
+                            </div>
+                        )}
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex gap-4">
-                        <button className="px-5 py-2 bg-white text-black rounded-md font-medium hover:bg-gray-200 transition">
+                    <div className="flex gap-4 mt-6">
+                        <button className="w-45 h-10 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
                             {primaryBtnText}
                         </button>
-                        <button className="px-5 py-2 border border-white rounded-md font-medium hover:bg-white hover:text-black transition">
+
+                        <button className="w-45 h-10 bg-white text-black rounded-md font-medium hover:bg-gray-100 transition cursor-pointer">
                             {secondaryBtnText}
                         </button>
                     </div>
