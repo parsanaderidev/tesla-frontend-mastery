@@ -54,7 +54,7 @@ const heroSlides: {
 export default function HeroSwiper() {
 
     return (
-        <section className="hero-swiper relative w-full h-[80vh]">
+        <section className="hero-swiper relative w-full h-[75vh]">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay, EffectFade]}
                 effect="fade"

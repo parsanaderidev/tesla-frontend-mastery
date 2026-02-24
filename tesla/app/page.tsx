@@ -1,20 +1,29 @@
 import Navbar from "@/components/layout/Navbar";
-import SwiperHero from "@/components/sections/hero/HeroSwiper";
+import CardSwiper from "@/components/sections/card/CardSwiper";
+import HeroSwiper from "@/components/sections/hero/HeroSwiper";
 
 export default function Home() {
 	return (
 		<>
-			<header className="header">
-				<div className="navbar">
-					<Navbar />
-				</div>
+			<header className="w-full">
+				<Navbar />
 			</header>
 
-			<main className="main">
-				<SwiperHero />
+			<main className="w-full flex flex-col">
+				{/* Hero Section */}
+				<section className="w-full">
+					<HeroSwiper />
+				</section>
+
+				{/* Card Section */}
+				<section className="w-full py-10">
+					<CardSwiper />
+				</section>
 			</main>
 
-			<footer className="footer"></footer>
+			<footer className="w-full h-24 flex items-center justify-center">
+				{/* Footer content */}
+			</footer>
 		</>
 	);
-};
+}

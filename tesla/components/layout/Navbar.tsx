@@ -160,7 +160,7 @@ function Navbar() {
 			</nav>
 
 			{/* Bottom Bar */}
-			<div className="fixed bottom-0 p-3 flex gap-2 bg-white w-full justify-center">
+			<div className="fixed bottom-0 z-50 p-3 flex gap-2 bg-white w-full justify-center">
 				<button className="bg-gray-100 flex gap-2 items-center p-1.5 px-5 border border-gray-400 rounded-sm cursor-pointer">
 					<RiMessage2Fill size={20} />
 					Ask a Question
