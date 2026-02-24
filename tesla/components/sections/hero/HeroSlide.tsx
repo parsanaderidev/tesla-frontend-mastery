@@ -40,8 +40,8 @@ export default function HeroSlide({
                 />
             )}
 
-            <div className="absolute top-20 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-center text-white">
-                <h2 className="text-5xl font-bold">{title}</h2>
+            <div className="absolute top-28 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-center text-white">
+                <h2 className="text-5xl font-semibold">{title}</h2>
 
                 <p
                     className={`text-xl mt-2 ${subtitleStyle === "inline"
