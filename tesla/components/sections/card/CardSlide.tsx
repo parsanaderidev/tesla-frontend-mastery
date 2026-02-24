@@ -36,7 +36,7 @@ export default function CardSlide({
 
             {/* Overlay Content */}
             {hasTextOverlay && (
-                <div className="absolute inset-0 flex flex-col justify-end p-6 z-10 text-white">
+                <div className="absolute pb-10 inset-0 flex flex-col justify-end p-6 z-10 text-white">
 
                     <div className="text-start absolute top-6 left-6">
                         {subtopic && <p className="text-md font-bold">{subtopic}</p>}

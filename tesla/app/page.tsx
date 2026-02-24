@@ -16,7 +16,7 @@ export default function Home() {
 				</section>
 
 				{/* Card Section */}
-				<section className="w-full py-5">
+				<section className="w-full py-5 mb-80">
 					<CardSwiper />
 				</section>
 			</main>

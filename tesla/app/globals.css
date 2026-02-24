@@ -37,8 +37,12 @@ h6 {
   transform: translateY(-50%);
 }
 
-.hero-swiper .custom-next { right: 2rem; }
-.hero-swiper .custom-prev { left: 2rem; }
+.hero-swiper .custom-next {
+  right: 2rem;
+}
+.hero-swiper .custom-prev {
+  left: 2rem;
+}
 
 .hero-swiper .custom-next:hover,
 .hero-swiper .custom-prev:hover {
@@ -73,4 +77,37 @@ h6 {
 
 .hero-swiper .swiper-pagination-bullet:hover {
   cursor: pointer;
+}
+
+.card-swiper .custom-pagination {
+  bottom: auto;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.card-swiper {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.card-swiper .swiper-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 50px 0 0 0;
+}
+
+.card-swiper .swiper-pagination-bullet {  
+  width: 10px;
+  height: 10px;
+  background-color: rgb(124, 124, 124);
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.card-swiper .swiper-pagination-bullet-active {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(0, 0, 0);
 }
