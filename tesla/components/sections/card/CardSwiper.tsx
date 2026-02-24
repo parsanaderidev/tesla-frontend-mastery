@@ -24,7 +24,7 @@ const slides: SlideType[] = [
     {
         id: 1,
         img: "/tesla-contents/images/Homepage-Card-Cybertruck.jpg",
-        topicImg: "/public/tesla-contents/images/CyberTruck.jpg",
+        topicImg: "/tesla-contents/images/Cybertruck-logo.png",
         subtitle: "Starting at $59,990",
         primaryBtnText: "Order Now",
         secondaryBtnText: "Learn More",
@@ -78,7 +78,7 @@ export default function CardSwiper() {
 
                 <Swiper
                     modules={[Navigation]}
-                    spaceBetween={10}      
+                    spaceBetween={5}      
                     slidesPerView={1.5}   
                     speed={600}
                     onBeforeInit={(swiper: SwiperType) => {
@@ -98,14 +98,14 @@ export default function CardSwiper() {
                 {/* Navigation Buttons */}
                 <div
                     ref={prevRef}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-full hover:brightness-110 transition"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition"
                 >
                     <ChevronLeft size={26} />
                 </div>
 
                 <div
                     ref={nextRef}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-full hover:brightness-110 transition"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition"
                 >
                     <ChevronRight size={26} />
                 </div>
