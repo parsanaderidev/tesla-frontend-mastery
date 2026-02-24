@@ -59,7 +59,7 @@ export default function CardSlide({
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex gap-4 mt-6">
+                    <div className="flex gap-4">
                         <button className="w-45 h-10 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
                             {primaryBtnText}
                         </button>
