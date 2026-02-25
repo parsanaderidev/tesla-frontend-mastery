@@ -15,7 +15,7 @@ function Feature() {
                         className="object-cover w-full rounded-lg"
                     />
 
-                    <div className="absolute bottom-15">
+                    <div className="absolute bottom-10">
                         {/* Content */}
                         <div className="grid">
                             <h2 className="pl-10 text-white text-[43px] font-semibold">Travel Safer, Arrive Refreshed</h2>
@@ -48,7 +48,7 @@ function Feature() {
                         className="object-cover w-full h-full"
                     />
 
-                    <div className="absolute bottom-15">
+                    <div className="absolute bottom-10">
                         {/* Content */}
                         <div className="grid w-auto">
                             <h2 className="pl-10 text-white text-[43px] font-semibold leading-13">Feature That <br /> Come Standard</h2>
