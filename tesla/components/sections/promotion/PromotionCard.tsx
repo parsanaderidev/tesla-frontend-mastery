@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Promotion() {
+function PromotionCard() {
     return (
         <div>Promotion</div>
     )
 }
 
-export default Promotion;
+export default PromotionCard;
