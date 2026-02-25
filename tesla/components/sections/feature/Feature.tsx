@@ -19,7 +19,7 @@ function Feature() {
                         {/* Content */}
                         <div className="grid">
                             <h2 className="pl-10 text-white text-[43px] font-semibold">Travel Safer, Arrive Refreshed</h2>
-                            <p className="pl-9 text-white text-2xl">Full self-Driving (Supervised)</p>
+                            <p className="pl-9 text-white text-[23px]">Full self-Driving (Supervised)</p>
                         </div>
 
                         {/* Button */}
