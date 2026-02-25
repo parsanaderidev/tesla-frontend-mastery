@@ -21,7 +21,7 @@ function Home() {
 					<CardSwiper />
 				</section>
 
-				<section className="w-full py-5 px-4 mb-80">
+				<section className="w-full py-5 px-4">
 					<PromotionCard />
 				</section>
 			</main>

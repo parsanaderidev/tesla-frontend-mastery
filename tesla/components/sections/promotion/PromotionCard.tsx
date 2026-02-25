@@ -17,7 +17,7 @@ function PromotionCard() {
 
                             {/* Text */}
                             <div className="flex">
-                                <p className="text-lg">Explore limited-time offers on Tesla vehicles.</p>
+                                <p className="text-lg font-normal">Explore limited-time offers on Tesla vehicles.</p>
                             </div>
                         </div>
 
@@ -46,12 +46,12 @@ function PromotionCard() {
                         <div className="grid gap-2 w-full">
                             {/* Title */}
                             <div className="flex">
-                                <h2 className="text-4xl font-semibold">Current Offers</h2>
+                                <h2 className="text-4xl font-semibold">American Heroes</h2>
                             </div>
 
                             {/* Text */}
                             <div className="flex">
-                                <p className="text-lg">$500 off for military, first responders, healthcare, teachers and students.</p>
+                                <p className="text-lg font-normal">$500 off for military, first responders, healthcare, teachers and students.</p>
                             </div>
                         </div>
 
