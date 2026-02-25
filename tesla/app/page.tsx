@@ -2,7 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import CardSwiper from "@/components/sections/card/CardSwiper";
 import HeroSwiper from "@/components/sections/hero/HeroSwiper";
 
-export default function Home() {
+function Home() {
 	return (
 		<>
 			<header className="w-full">
@@ -26,4 +26,6 @@ export default function Home() {
 			</footer>
 		</>
 	);
-}
+};
+
+export default Home;

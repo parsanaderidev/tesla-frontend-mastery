@@ -10,7 +10,7 @@ type MegaMenuProps = {
     type: string;
 };
 
-export default function MegaMenuFactory({ type }: MegaMenuProps) {
+function MegaMenuFactory({ type }: MegaMenuProps) {
     switch (type) {
         case "vehicles":
             return <VehiclesMega />;
@@ -28,3 +28,5 @@ export default function MegaMenuFactory({ type }: MegaMenuProps) {
             return null;
     };
 };
+
+export default MegaMenuFactory;

@@ -11,7 +11,7 @@ interface HeroSlideProps {
     primaryBtnText: string;
     secondaryBtnText: string;
 }
-export default function HeroSlide({
+function HeroSlide({
     title,
     subtitle,
     img,
@@ -68,3 +68,5 @@ export default function HeroSlide({
         </div>
     );
 };
+
+export default HeroSlide;

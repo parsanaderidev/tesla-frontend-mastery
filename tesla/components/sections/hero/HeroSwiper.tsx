@@ -51,7 +51,7 @@ const heroSlides: {
         },
     ];
 
-export default function HeroSwiper() {
+function HeroSwiper() {
 
     return (
         <section className="hero-swiper relative w-full h-[75vh]">
@@ -82,3 +82,5 @@ export default function HeroSwiper() {
         </section>
     );
 };
+
+export default HeroSwiper;

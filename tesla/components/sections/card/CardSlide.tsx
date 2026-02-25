@@ -11,7 +11,7 @@ type CardSlideProps = {
     hasTextOverlay?: boolean;
 };
 
-export default function CardSlide({
+function CardSlide({
     title,
     topicImg,
     subtopic,
@@ -79,3 +79,5 @@ export default function CardSlide({
         </div>
     );
 };
+
+export default CardSlide;

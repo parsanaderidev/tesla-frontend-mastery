@@ -30,7 +30,7 @@ const slides: SlideType[] = [
     { id: 5, title: "Model S", subtopic: "Luxury Sedan", subtitle: "3.99% APR Available", img: "/tesla-contents/images/Homepage-Card-Model-S-v3.avif", primaryBtnText: "Order Now", secondaryBtnText: "Learn More", hasTextOverlay: true },
 ];
 
-export default function CardSwiper() {
+function CardSwiper() {
     const prevRef = useRef<HTMLDivElement>(null);
     const nextRef = useRef<HTMLDivElement>(null);
     const swiperRef = useRef<SwiperType | null>(null);
@@ -89,4 +89,6 @@ export default function CardSwiper() {
             </div>
         </section>
     );
-}
+};
+
+export default CardSwiper;
