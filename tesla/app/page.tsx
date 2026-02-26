@@ -2,7 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import CardSwiper from "@/components/sections/card/CardSwiper";
 import Feature from "@/components/sections/feature/Feature";
 import HeroSwiper from "@/components/sections/hero/HeroSwiper";
-import NetworkExplorerSection from "@/components/sections/network/NetworkExplorerSection";
+import MapExplorer from "@/components/sections/map/MapExplorer";
 import PromotionCard from "@/components/sections/promotion/PromotionCard";
 
 function Home() {
@@ -32,7 +32,7 @@ function Home() {
 				</section>
 
 				<section className="w-full py-5 px-4">
-					<NetworkExplorerSection />
+					<MapExplorer />
 				</section>
 			</main>
 
