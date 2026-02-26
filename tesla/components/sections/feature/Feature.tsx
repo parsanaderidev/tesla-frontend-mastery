@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 function Feature() {
     return (
-        <section className="flex gap-8 w-full h-fit">
+        <section className="flex gap-8">
             {/* Safe Travel Card */}
             <div className="w-7xl">
                 <div className="relative">
