@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 function Feature() {
     return (
-        <section className="flex gap-5">
+        <section className="flex gap-8 w-full h-fit">
             {/* Safe Travel Card */}
-            <div className="w-5xl">
+            <div className="w-7xl">
                 <div className="relative">
                     <Image
                         src={'/tesla-contents/images/Homepage-FSD-Safety-Report-Split.jpg'}
@@ -38,13 +38,13 @@ function Feature() {
 
             {/* Feature */}
             <div className="flex">
-                <div className="w-120 h-135 relative rounded-lg overflow-hidden">
+                <div className="w-110 h-full relative rounded-lg overflow-hidden">
                     <Image
                         src={'/tesla-contents/images/Homepage-Features.jpg'}
                         alt='Safety Report'
                         width={800}
                         height={800}
-                        quality={100}
+                        quality={75}
                         className="object-cover w-full h-full"
                     />
 
