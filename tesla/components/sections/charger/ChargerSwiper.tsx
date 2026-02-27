@@ -18,7 +18,7 @@ type SlideType = {
     subtitle?: string;
     img: string;
     primaryBtnText?: string;
-    secondaryBtnText: string;
+    secondaryBtnText?: string;
     hasTextOverlay?: boolean;
 };
 
@@ -46,7 +46,7 @@ const slides: SlideType[] = [
         title: "Megapack",
         subtitle: "Massive Batteries for Massive Energy Support",
         img: "/tesla-contents/images/Homepage-Card-Model-X.jpg",
-        secondaryBtnText: "Learn More",
+        primaryBtnText: "Learn More",
         hasTextOverlay: true
     },
     {

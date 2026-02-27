@@ -7,7 +7,7 @@ type ChargerSlideProps = {
     subtitle?: string;
     img: string;
     primaryBtnText?: string;
-    secondaryBtnText: string;
+    secondaryBtnText?: string;
     hasTextOverlay?: boolean;
 };
 
@@ -60,13 +60,17 @@ function ChargerSlide({
 
                     {/* Buttons */}
                     <div className="flex gap-4">
-                        <button className="w-45 h-10 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
-                            {primaryBtnText}
-                        </button>
+                        {primaryBtnText && (
+                            <button className="w-45 h-10 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
+                                {primaryBtnText}
+                            </button>
+                        )}
 
-                        <button className="w-45 h-10 bg-white text-black rounded-md font-medium hover:bg-gray-100 transition cursor-pointer">
-                            {secondaryBtnText}
-                        </button>
+                        {secondaryBtnText && (
+                            <button className="w-45 h-10 bg-white text-black rounded-md font-medium hover:bg-gray-100 transition cursor-pointer">
+                                {secondaryBtnText}
+                            </button>
+                        )}
                     </div>
                 </div>
             )}
