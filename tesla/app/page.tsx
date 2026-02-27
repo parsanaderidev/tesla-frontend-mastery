@@ -1,5 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import CardSwiper from "@/components/sections/card/CardSwiper";
+import ChargerSwiper from "@/components/sections/charger/ChargerSwiper";
 import Feature from "@/components/sections/feature/Feature";
 import HeroSwiper from "@/components/sections/hero/HeroSwiper";
 import MapExplorer from "@/components/sections/map/MapExplorer";
@@ -33,6 +34,10 @@ function Home() {
 
 				<section className="w-full py-5 px-4">
 					<MapExplorer />
+				</section>
+
+				<section className="w-full py-5">
+					<ChargerSwiper />
 				</section>
 			</main>
 
