@@ -7,8 +7,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
-import CardSlide from "./ChargerSlide";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import ChargerSlide from "./ChargerSlide";
 
 type SlideType = {
     id: number;
@@ -17,17 +17,47 @@ type SlideType = {
     subtopic?: string;
     subtitle?: string;
     img: string;
-    primaryBtnText: string;
+    primaryBtnText?: string;
     secondaryBtnText: string;
     hasTextOverlay?: boolean;
 };
 
 const slides: SlideType[] = [
-    { id: 1, img: "/tesla-contents/images/Homepage-Card-Cybertruck.jpg", topicImg: "/tesla-contents/images/Cybertruck-logo.png", subtopic: "Utility Truck", subtitle: "Starting at $59,990", primaryBtnText: "Order Now", secondaryBtnText: "Learn More", hasTextOverlay: true },
-    { id: 2, title: "Model 3", subtopic: "Sport Sedan", img: "/tesla-contents/images/Homepage-Card-Model-3-PS.webp", primaryBtnText: "Order Now", secondaryBtnText: "Learn More", hasTextOverlay: true },
-    { id: 3, title: "Model Y", subtopic: "Midsize SUV", subtitle: "Lease From $459/mo", img: "/tesla-contents/images/Homepage-Vehicle-Card-Model-Y.jpg", primaryBtnText: "Order Now", secondaryBtnText: "Learn More", hasTextOverlay: true },
-    { id: 4, title: "Model X", subtopic: "Luxury SUV", subtitle: "3.99% APR Available", img: "/tesla-contents/images/Homepage-Card-Model-X.jpg", primaryBtnText: "Order Now", secondaryBtnText: "Learn More", hasTextOverlay: true },
-    { id: 5, title: "Model S", subtopic: "Luxury Sedan", subtitle: "3.99% APR Available", img: "/tesla-contents/images/Homepage-Card-Model-S-v3.avif", primaryBtnText: "Order Now", secondaryBtnText: "Learn More", hasTextOverlay: true },
+    {
+        id: 1,
+        title: "Solar Panels",
+        subtitle: "Power Your Home and Reduce Your Electricity Bill",
+        img: "/tesla-contents/images/Homepage-Card-Model-3-PS.webp",
+        primaryBtnText: "Order Now",
+        secondaryBtnText: "Learn More",
+        hasTextOverlay: true
+    },
+    {
+        id: 2,
+        title: "Powerwall",
+        subtitle: "Keep Your Lights On During Outages",
+        img: "/tesla-contents/images/Homepage-Vehicle-Card-Model-Y.jpg",
+        primaryBtnText: "Order Now",
+        secondaryBtnText: "Learn More",
+        hasTextOverlay: true
+    },
+    {
+        id: 3,
+        title: "Megapack",
+        subtitle: "Massive Batteries for Massive Energy Support",
+        img: "/tesla-contents/images/Homepage-Card-Model-X.jpg",
+        secondaryBtnText: "Learn More",
+        hasTextOverlay: true
+    },
+    {
+        id: 4,
+        title: "Solar Roof",
+        subtitle: "Generate Clean Energy With Your Roof",
+        img: "/tesla-contents/images/Homepage-Card-Model-S-v3.avif",
+        primaryBtnText: "Order Now",
+        secondaryBtnText: "Learn More",
+        hasTextOverlay: true
+    },
 ];
 
 function ChargerSwiper() {
@@ -65,7 +95,7 @@ function ChargerSwiper() {
                 >
                     {slides.map((slide) => (
                         <SwiperSlide key={slide.id} className="pl-3 pr-3">
-                            <CardSlide {...slide} />
+                            <ChargerSlide {...slide} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

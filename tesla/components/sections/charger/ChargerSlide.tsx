@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-type CardSlideProps = {
+type ChargerSlideProps = {
     title?: string;
     topicImg?: string;
     subtopic?: string;
     subtitle?: string;
     img: string;
-    primaryBtnText: string;
+    primaryBtnText?: string;
     secondaryBtnText: string;
     hasTextOverlay?: boolean;
 };
@@ -14,13 +14,12 @@ type CardSlideProps = {
 function ChargerSlide({
     title,
     topicImg,
-    subtopic,
     subtitle,
     img,
     primaryBtnText,
     secondaryBtnText,
     hasTextOverlay = true,
-}: CardSlideProps) {
+}: ChargerSlideProps) {
     return (
         <div className="relative h-125 rounded-xl overflow-hidden group">
 
@@ -37,10 +36,6 @@ function ChargerSlide({
             {/* Overlay Content */}
             {hasTextOverlay && (
                 <div className="absolute pb-10 inset-0 flex flex-col justify-end p-6 z-10 text-white">
-
-                    <div className="text-start absolute top-6 left-6">
-                        {subtopic && <p className="text-md font-bold">{subtopic}</p>}
-                    </div>
 
                     {/* Topic */}
                     <div className="mb-4">
@@ -59,7 +54,6 @@ function ChargerSlide({
                         {subtitle && (
                             <div className="mt-0 flex flex-col relative w-max">
                                 <p className="text-lg">{subtitle}</p>
-                                <span className="block h-[0.5px] bg-white -mt-0.6"></span>
                             </div>
                         )}
                     </div>
