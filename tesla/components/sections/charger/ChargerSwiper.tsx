@@ -73,13 +73,10 @@ function ChargerSwiper() {
                 <Swiper
                     modules={[Navigation, Pagination]}
                     slidesPerView={1.5}
-                    spaceBetween={20}
+                    spaceBetween={0}
                     speed={600}
                     loop={false}
-                    breakpoints={{
-                        768: { slidesPerView: 1.5, spaceBetween: 28 },
-                        1024: { slidesPerView: 1.5, spaceBetween: 32 },
-                    }}
+                    className="!overflow-visible"
                     pagination={{
                         clickable: true,
                     }}
@@ -98,8 +95,10 @@ function ChargerSwiper() {
                     onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                 >
                     {slides.map((slide) => (
-                        <SwiperSlide key={slide.id}>
-                            <ChargerSlide {...slide} />
+                        <SwiperSlide key={slide.id} className="!h-auto">
+                            <div className="h-full pr-4 sm:pr-5 lg:pr-5 box-border">
+                                <ChargerSlide {...slide} />
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>

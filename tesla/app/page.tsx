@@ -14,7 +14,7 @@ function Home() {
 				<Navbar />
 			</header>
 
-			<main className="w-full flex flex-col pt-16 pb-28 sm:pb-24">
+			<main className="w-full flex flex-col pt-16 pb-0">
 				{/* Hero Section */}
 				<section className="w-full">
 					<HeroSwiper />
@@ -37,7 +37,7 @@ function Home() {
 					<MapExplorer />
 				</section>
 
-				<section className="w-full py-4 sm:py-5">
+				<section className="w-full pt-4 pb-2 sm:pt-5 sm:pb-3 lg:pb-4">
 					<ChargerSwiper />
 				</section>
 			</main>

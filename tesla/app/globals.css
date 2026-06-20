@@ -94,6 +94,16 @@ h6 {
 
 .card-swiper .swiper {
   padding-bottom: 3rem;
+  overflow: visible;
+}
+
+.card-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.card-swiper .swiper-slide {
+  height: auto;
+  box-sizing: border-box;
 }
 
 .card-swiper .swiper-pagination {
