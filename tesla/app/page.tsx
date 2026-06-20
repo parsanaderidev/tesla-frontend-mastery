@@ -14,7 +14,7 @@ function Home() {
 				<Navbar />
 			</header>
 
-			<main className="w-full flex flex-col">
+			<main className="w-full flex flex-col pt-16 pb-28 sm:pb-24">
 				{/* Hero Section */}
 				<section className="w-full">
 					<HeroSwiper />
@@ -25,19 +25,19 @@ function Home() {
 					<CardSwiper />
 				</section>
 
-				<section className="w-full py-5 px-4">
+				<section className="w-full py-4 sm:py-5 px-4 sm:px-6 lg:px-10">
 					<PromotionCard />
 				</section>
 
-				<section className="w-full py-5 px-4">
+				<section className="w-full py-4 sm:py-5 px-4 sm:px-6 lg:px-10">
 					<Feature />
 				</section>
 
-				<section className="w-full py-5 px-4">
+				<section className="w-full py-4 sm:py-5 px-4 sm:px-6 lg:px-10">
 					<MapExplorer />
 				</section>
 
-				<section className="w-full py-5">
+				<section className="w-full py-4 sm:py-5">
 					<ChargerSwiper />
 				</section>
 			</main>

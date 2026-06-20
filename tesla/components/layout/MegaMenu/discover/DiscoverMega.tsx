@@ -30,9 +30,9 @@ export const discoverContent = {
 function DiscoverMega() {
     return (
         <>
-            <section className="py-5 px-75 grid grid-cols-3 gap-x-10 justify-center">
+            <section className="py-5 px-4 sm:px-8 lg:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-10 justify-center">
                 {/* Resources */}
-                <div className="w-full py-5 px-10">
+                <div className="w-full py-4 sm:py-5 px-2 sm:px-6 lg:px-10">
                     <h2 className="font-semibold text-[14px] relative inline-block text-gray-400 mb-4">
                         Resources
                     </h2>
@@ -50,7 +50,7 @@ function DiscoverMega() {
                 </div>
 
                 {/* Location Services */}
-                <div className="w-full py-5 px-10">
+                <div className="w-full py-4 sm:py-5 px-2 sm:px-6 lg:px-10">
                     <h2 className="font-semibold text-[14px] relative inline-block text-gray-400 mb-4">
                         Location Service
                     </h2>
@@ -68,7 +68,7 @@ function DiscoverMega() {
                 </div>
 
                 {/* Company */}
-                <div className="w-full py-5 px-10">
+                <div className="w-full py-4 sm:py-5 px-2 sm:px-6 lg:px-10">
                     <h2 className="font-semibold text-[14px] relative inline-block text-gray-400 mb-4">
                         Company
                     </h2>

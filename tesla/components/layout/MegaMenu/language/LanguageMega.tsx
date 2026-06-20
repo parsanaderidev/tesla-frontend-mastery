@@ -120,8 +120,8 @@ function RenderCountry({ country }: RenderCountryProps) {
 // Mega menu
 function LanguageMega() {
     return (
-        <section className="px-20 py-10 bg-white max-h-150 overflow-y-auto">
-            <div className="grid grid-cols-4 gap-x-8 gap-y-2 justify-center">
+        <section className="px-4 sm:px-10 lg:px-20 py-6 sm:py-10 bg-white max-h-[70vh] lg:max-h-150 overflow-y-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-x-8 gap-y-6 justify-center">
                 {/* America + Middle East */}
                 <div className="space-y-4">
                     <div>
@@ -167,7 +167,7 @@ function LanguageMega() {
                     <h3 className="text-md font-semibold mb-1 text-black uppercase tracking-wide">
                         Europe
                     </h3>
-                    <div className="flex gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4 overflow-x-auto">
                         {languageData.Europe.map((column, colIdx) => (
                             <div key={colIdx} className="space-y-3 shrink-0">
                                 {column.map((c, i) => (

@@ -81,15 +81,19 @@ function CardSwiper() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="card-swiper relative w-full">
-            <div className="max-w-500 mx-auto relative">
+        <section className="card-swiper relative w-full pl-4 sm:pl-6 lg:pl-10 pr-0">
+            <div className="relative w-full">
 
                 <Swiper
                     modules={[Navigation, Pagination]}
                     slidesPerView={1.5}
-                    spaceBetween={0}
+                    spaceBetween={20}
                     speed={600}
                     loop={false}
+                    breakpoints={{
+                        768: { slidesPerView: 1.5, spaceBetween: 28 },
+                        1024: { slidesPerView: 1.5, spaceBetween: 32 },
+                    }}
                     pagination={{
                         clickable: true,
                     }}
@@ -108,7 +112,7 @@ function CardSwiper() {
                     onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                 >
                     {slides.map((slide) => (
-                        <SwiperSlide key={slide.id} className="pl-3 pr-3">
+                        <SwiperSlide key={slide.id}>
                             <CardSlide {...slide} />
                         </SwiperSlide>
                     ))}
@@ -117,7 +121,7 @@ function CardSwiper() {
                 {/* Prev Button */}
                 <div
                     ref={prevRef}
-                    className={`absolute left-5 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition ${activeIndex === 0 ? "opacity-0 pointer-events-none" : ""}`}
+                    className={`absolute left-3 sm:left-5 lg:left-6 top-[36%] sm:top-[38%] md:top-[40%] -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-md hover:brightness-110 transition ${activeIndex === 0 ? "opacity-0 pointer-events-none" : ""}`}
                 >
                     <ChevronLeft size={26} />
                 </div>
@@ -125,7 +129,7 @@ function CardSwiper() {
                 {/* Next Button */}
                 <div
                     ref={nextRef}
-                    className={`absolute right-5 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-md hover:brightness-110 transition ${activeIndex === slides.length - 1 ? "opacity-0 pointer-events-none" : ""}`}
+                    className={`absolute right-6 sm:right-8 lg:right-10 top-[36%] sm:top-[38%] md:top-[40%] -translate-y-1/2 z-20 cursor-pointer bg-white shadow-md w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-md hover:brightness-110 transition ${activeIndex === slides.length - 1 ? "opacity-0 pointer-events-none" : ""}`}
                 >
                     <ChevronRight size={26} />
                 </div>
