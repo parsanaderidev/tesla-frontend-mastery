@@ -5,6 +5,7 @@ import Feature from "@/components/sections/feature/Feature";
 import HeroSwiper from "@/components/sections/hero/HeroSwiper";
 import MapExplorer from "@/components/sections/map/MapExplorer";
 import PromotionCard from "@/components/sections/promotion/PromotionCard";
+import Footer from "@/components/layout/Footer";
 
 function Home() {
 	return (
@@ -41,9 +42,7 @@ function Home() {
 				</section>
 			</main>
 
-			<footer className="w-full h-24 flex items-center justify-center">
-				{/* Footer content */}
-			</footer>
+			<Footer />
 		</>
 	);
 };
